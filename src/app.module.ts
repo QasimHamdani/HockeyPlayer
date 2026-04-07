@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PlayersModule } from './players/players.module';
+import { PlayersModule } from './players.module';
 
 @Module({
   imports: [PlayersModule, MongooseModule.forRoot('mongodb+srv://qasimhamdani26:apple@cluster0.dvibg4n.mongodb.net/nestjs-demo')],
