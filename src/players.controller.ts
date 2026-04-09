@@ -13,6 +13,7 @@ constructor (private readonly playersService: PlayersService){
         @Body('pos') playPos: string,
         @Body('speed') playSpeed: number,
         @Body('strength') playStrength: number,
+        
 ) {
 
         const generatedId= await this.playersService.insertPlayer(
