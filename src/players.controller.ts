@@ -26,11 +26,12 @@ constructor (private readonly playersService: PlayersService){
         return {id: generatedId};
         
     }
+    
     @Get()
     async getAllPlayers(){
         const players = await this.playersService.getPlayers();
         return players;
-        
+
     }
 
     @Get(':id')
