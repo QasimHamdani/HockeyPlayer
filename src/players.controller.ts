@@ -4,7 +4,6 @@ import { PlayersService } from "./players.service";
 @Controller ('players')
 export class PlayersController {
 constructor (private readonly playersService: PlayersService){
-
 }
 
     @Post()
@@ -26,7 +25,7 @@ constructor (private readonly playersService: PlayersService){
         return {id: generatedId};
         
     }
-    
+
     @Get()
     async getAllPlayers(){
         const players = await this.playersService.getPlayers();
