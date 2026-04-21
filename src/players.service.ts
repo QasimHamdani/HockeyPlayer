@@ -61,6 +61,10 @@ export class PlayersService{
         
 
     }
+    async getHighSpeed(): Promise<Player[]> {
+    return this.playerModel.find({ speed: { $gte: 90 } }).exec();
+
+}
 
     private async findPlayer(id:string): Promise<Player>{
         let player;

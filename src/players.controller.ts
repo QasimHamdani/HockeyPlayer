@@ -22,7 +22,7 @@ constructor (private readonly playersService: PlayersService){
             playStrength
         );
         console.log(generatedId)
-        
+
         return {id: generatedId};
         
     }
@@ -32,6 +32,11 @@ constructor (private readonly playersService: PlayersService){
         const players = await this.playersService.getPlayers();
         return players;
 
+    }
+     @Get('speed')
+    async getHighSpeed(){
+        const players = await this.playersService.getHighSpeed();
+        return players
     }
 
     @Get(':id')
@@ -54,4 +59,6 @@ constructor (private readonly playersService: PlayersService){
         await this.playersService.deletePlayer(playId);
         return null;
     }
+
+   
 }
