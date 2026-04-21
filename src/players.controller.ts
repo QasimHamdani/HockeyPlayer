@@ -22,6 +22,7 @@ constructor (private readonly playersService: PlayersService){
             playStrength
         );
         console.log(generatedId)
+        
         return {id: generatedId};
         
     }
