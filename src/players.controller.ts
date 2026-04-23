@@ -38,7 +38,11 @@ constructor (private readonly playersService: PlayersService){
         const players = await this.playersService.getHighSpeed();
         return players
     }
-
+    @Get('strength')
+    async getHighStrength(){
+        const players = await this.playersService.getHighStrength();
+        return players
+    }
     @Get(':id')
     getPlayer(@Param('id') playId: string, ){
         return this.playersService.getSinglePlayer(playId);

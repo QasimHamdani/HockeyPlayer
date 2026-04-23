@@ -17,7 +17,7 @@ export class PlayersService{
     return result.id as string;
     }
 
-    async getPlayers(){
+    async getPlayers(){ 
         const players = await this.playerModel.find().exec();
     
         return players.map((play) => ({id: play.id, name: play.name, pos: play.pos, speed: play.speed, strength: play.strength }));
@@ -62,7 +62,11 @@ export class PlayersService{
 
     }
     async getHighSpeed(): Promise<Player[]> {
-    return this.playerModel.find({ speed: { $gte: 90 } }).exec();
+    return this.playerModel.find({ speed: { $gte: 95 } }).exec();
+
+}
+    async getHighStrength(): Promise<Player[]> {
+    return this.playerModel.find({ strength: { $gte: 95 } }).exec();
 
 }
 
